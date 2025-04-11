@@ -26,16 +26,9 @@ vim.keymap.set('n','<leader>pp', function()
         vim.print(lines)
 end)
 
+vim.keymap.set('n','<leader>it', vim.cmd.InspectTree)
+vim.keymap.set('n','<leader>opt', vim.cmd.options)
+
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end)
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.e("~/.config/nvim/lua/walrus/init.lua") end)
-
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.inccommand = "split"
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.tabstop = 8
-vim.opt.expandtab = true
-vim.opt.virtualedit = 'block'
-vim.opt.termguicolors = true
+vim.keymap.set('n', '<leader>pl', function() vim.cmd.e("~/.config/nvim/lua/plugins/spec.lua") end)

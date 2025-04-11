@@ -1,3 +1,4 @@
-require 'config.lazy'
+require 'walrus.options'
 require 'walrus'
-print"Welkommen"
+require 'config.lazy'
+print "Welkommen"
