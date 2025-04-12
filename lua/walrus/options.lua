@@ -10,5 +10,6 @@ vim.opt.virtualedit = 'block'
 vim.opt.termguicolors = true
 vim.opt.ignorecase = true
 vim.opt.scrolloff = 20
+vim.o.signcolumn = 'yes'
 
 vim.g.mapleader = " "

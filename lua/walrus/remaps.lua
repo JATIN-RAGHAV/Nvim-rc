@@ -18,11 +18,8 @@ vim.keymap.set('n', '<leader>fd', '<C-w>99_', {noremap = true, silent = true, de
 
 vim.keymap.set('n','<leader>pp', function()
         local lines = table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n')
-        -- create a namespace (you can reuse this across many highlights)
         local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
-
-        -- highlight from line 2, col 0 to line 2, col 8 using a highlight group like 'Function'
-        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 1, 0, 8)  -- 1 is line 2 (0-indexed)
+        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 1, 0, 8)
         vim.print(lines)
 end)
 
@@ -30,5 +27,5 @@ vim.keymap.set('n','<leader>it', vim.cmd.InspectTree)
 vim.keymap.set('n','<leader>opt', vim.cmd.options)
 
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end)
-vim.keymap.set('n', '<leader>mrc', function() vim.cmd.e("~/.config/nvim/lua/walrus/init.lua") end)
-vim.keymap.set('n', '<leader>pl', function() vim.cmd.e("~/.config/nvim/lua/plugins/spec.lua") end)
+vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end)
+vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end)
