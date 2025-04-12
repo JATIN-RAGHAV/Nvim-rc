@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>sex', function() print"sex" end)
 vim.keymap.set('n', '<leader>pv', function() vim.cmd.Ex() end)
 
@@ -29,3 +30,5 @@ vim.keymap.set('n','<leader>opt', vim.cmd.options)
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end)
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end)
 vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end)
+
+vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch)
