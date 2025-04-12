@@ -1,4 +1,4 @@
 require 'walrus.options'
 require 'walrus.remaps'
-require 'config.lazy'
+require 'lazy-plugin'
 print "Welkommen"
