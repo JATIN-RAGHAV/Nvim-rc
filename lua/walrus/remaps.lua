@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>sex', function() print"sex" end)
+vim.keymap.set('n', '<leader>sex', function() print"sex" end, {desc="Prints Sex"})
 vim.keymap.set('n', '<leader>pv', function() vim.cmd.Ex() end)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true})

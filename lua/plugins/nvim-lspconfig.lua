@@ -27,5 +27,9 @@ return {
                 lspconfig.rust_analyzer.setup(require'lsps.rust-analyzer')
                 lspconfig.lua_ls.setup(require'lsps.lua_ls')
                 lspconfig.pylsp.setup(require'lsps.pylsp')
+                lspconfig.cmake.setup({})
+
+                vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {desc='Goto definition'});
+                vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})
         end,
 }
