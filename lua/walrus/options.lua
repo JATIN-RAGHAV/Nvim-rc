@@ -11,4 +11,6 @@ vim.opt.termguicolors = true
 vim.opt.ignorecase = true
 vim.opt.scrolloff = 8
 vim.o.signcolumn = 'yes'
-
+vim.o.undofile = true
+vim.o.undodir = vim.fn.stdpath('state') .. '/undo'
+vim.opt.cul = true
