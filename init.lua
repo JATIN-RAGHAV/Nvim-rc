@@ -1,3 +1,3 @@
-require 'walrus'
 require 'lazy-plugin'
+require 'walrus'
 print "Welkommen"
