@@ -29,5 +29,25 @@ vim.keymap.set('n','<leader>opt', vim.cmd.options)
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end)
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end)
 vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end)
+vim.keymap.set('n', '<leader>lsp', function () vim.cmd.Ex("~/.config/nvim/lua/lsps") end)
 
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch)
+
+vim.keymap.set('n', '<leader>blp', function ()
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, {
+                "#include <iostream>",
+                "using namespace std;",
+                "",
+                "void solver(){",
+                "",
+                "}",
+                "",
+                "int main(){",
+                "       int t;",
+                "       cin >> t;",
+                "       while(t--){",
+                "               solver();",
+                "       }",
+                "}"
+        })
+end)

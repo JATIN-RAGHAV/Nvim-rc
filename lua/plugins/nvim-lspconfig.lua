@@ -28,8 +28,10 @@ return {
                 lspconfig.lua_ls.setup(require'lsps.lua_ls')
                 lspconfig.pylsp.setup(require'lsps.pylsp')
                 lspconfig.cmake.setup({})
+                lspconfig.ts_ls.setup(require 'lsps.ts_ls')
+                lspconfig.biome.setup({})
 
-                vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {desc='Goto definition'});
+                vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})
         end,
 }
