@@ -30,6 +30,9 @@ return {
                 lspconfig.cmake.setup({})
                 lspconfig.ts_ls.setup(require 'lsps.ts_ls')
                 lspconfig.biome.setup({})
+                lspconfig.cssls.setup(require 'lsps.cssls')
+                lspconfig.cssmodules_ls.setup(require 'lsps.cssmodules_ls')
+                lspconfig.tailwindcss.setup(require 'lsps.tailwindcss')
 
                 vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})

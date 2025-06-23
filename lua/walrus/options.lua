@@ -3,6 +3,7 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
+vim.opt.guicursor = "n:block"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 8

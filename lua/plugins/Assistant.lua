@@ -22,7 +22,7 @@ return {
                                         extension = 'cpp',
                                         template = nil,
                                         compile = {
-                                                main = 'g++',
+                                                main = 'clang++',
                                                 args = { '$FILENAME_WITH_EXTENSION', '-o', '$FILENAME_WITHOUT_EXTENSION' },
                                         },
                                         execute = {

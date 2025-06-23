@@ -25,6 +25,7 @@ end)
 
 vim.keymap.set('n','<leader>it', vim.cmd.InspectTree)
 vim.keymap.set('n','<leader>opt', vim.cmd.options)
+vim.keymap.set('n', '<leader>li', vim.cmd.LspInfo)
 
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end)
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end)
@@ -35,14 +36,23 @@ vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch)
 
 vim.keymap.set('n', '<leader>blp', function ()
         vim.api.nvim_buf_set_lines(0, 0, -1, false, {
-                "#include <iostream>",
+                "#include <bits/stdc++.h>",
                 "using namespace std;",
-                "",
+                "typedef vector<int> vi;",
+                "typedef pair<int, int> pi;",
+                "typedef int64_t int6;",
+                "#define all(x) (x.begin(),x.end());",
+                "#define pb push_back",
+                "#define B .back()",
+                "#define repl(i,s,n) for (int i = s; i < n; i++)",
+                "#define repe(i,s,n) for (int i = s; i <= n; i++)",
                 "void solver(){",
                 "",
                 "}",
                 "",
                 "int main(){",
+                "       ios::sync_with_stdio(false);",
+                "       cin.tie(nullptr);",
                 "       int t;",
                 "       cin >> t;",
                 "       while(t--){",
