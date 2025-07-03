@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>fd', '<C-w>99_', {noremap = true, silent = true, de
 vim.keymap.set('n','<leader>pp', function()
         local lines = table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n')
         local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
-        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 1, 0, 8)
+        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 5, 0, 10)
         vim.print(lines)
 end)
 
@@ -31,6 +31,10 @@ vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua"
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end)
 vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end)
 vim.keymap.set('n', '<leader>lsp', function () vim.cmd.Ex("~/.config/nvim/lua/lsps") end)
+vim.keymap.set('n', '<leader>e' , vim.diagnostic.open_float);
+vim.keymap.set('n', '<leader>ca', function ()
+        vim.lsp.buf.code_action({filter = function(a) return a.isPreferred end, apply=true});
+end, {noremap = true, silent = true})
 
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch)
 
@@ -41,9 +45,10 @@ vim.keymap.set('n', '<leader>blp', function ()
                 "typedef vector<int> vi;",
                 "typedef pair<int, int> pi;",
                 "typedef int64_t int6;",
-                "#define all(x) (x.begin(),x.end());",
+                "#define all(x) x.begin(),x.end()",
+                "#define mp(a,b) make_pair(a,b)",
                 "#define pb push_back",
-                "#define B .back()",
+                "#define B back()",
                 "#define repl(i,s,n) for (int i = s; i < n; i++)",
                 "#define repe(i,s,n) for (int i = s; i <= n; i++)",
                 "void solver(){",
