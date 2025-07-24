@@ -37,32 +37,4 @@ vim.keymap.set('n', '<leader>ca', function ()
 end, {noremap = true, silent = true})
 
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch)
-
-vim.keymap.set('n', '<leader>blp', function ()
-        vim.api.nvim_buf_set_lines(0, 0, -1, false, {
-                "#include <bits/stdc++.h>",
-                "using namespace std;",
-                "typedef vector<int> vi;",
-                "typedef pair<int, int> pi;",
-                "typedef int64_t int6;",
-                "#define all(x) x.begin(),x.end()",
-                "#define mp(a,b) make_pair(a,b)",
-                "#define pb push_back",
-                "#define B back()",
-                "#define repl(i,s,n) for (int i = s; i < n; i++)",
-                "#define repe(i,s,n) for (int i = s; i <= n; i++)",
-                "void solver(){",
-                "",
-                "}",
-                "",
-                "int main(){",
-                "       ios::sync_with_stdio(false);",
-                "       cin.tie(nullptr);",
-                "       int t;",
-                "       cin >> t;",
-                "       while(t--){",
-                "               solver();",
-                "       }",
-                "}"
-        })
-end)
+vim.keymap.set('n', '<leader>sa','ggVGy<C-o>')
