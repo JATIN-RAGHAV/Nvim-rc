@@ -10,9 +10,9 @@ function Cp()
 		file_cp:close()
 	end
 
-	vim.keymap.set('n', '<leader>pcpp', function ()
+	vim.keymap.set('n', '<leader>blp', function ()
 		vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(blp_cp,'\n'))
-	end)
+	end,{desc="Prints boiler plate code for competitive programming"})
 
 	local path_lc = vim.fn.expand("~/.config/nvim/lua/walrus/leetcode_boilerplate.cpp")
 	local file_lc = io.open(path_lc,'r')
@@ -23,7 +23,7 @@ function Cp()
 
 	vim.keymap.set('n', '<leader>plc', function ()
 		vim.api.nvim_buf_set_lines(0,0,-1,false,vim.split(blp_lc,'\n'))
-	end)
+	end,{desc="Prints boiler plate code for leetcode problems"})
 
 
 	vim.keymap.set('n', '<leader>pbs' , function ()
