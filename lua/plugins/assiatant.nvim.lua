@@ -1,8 +1,8 @@
-return {
-        'A7lavinraj/assistant.nvim',
+return{
+         'A7lavinraj/assistant.nvim',
         lazy = false,
         keys = {
-                { '<leader>cpp', '<cmd>Assistant<cr>', desc = 'Assistant.nvim' }
+                { '<leader>cpp','<cmd>Assistant<cr>',desc = 'Assistant.nvim' }
         },
         opts = {},
         config = function ()
@@ -44,5 +44,4 @@ return {
                 })
 
         end
-
 }

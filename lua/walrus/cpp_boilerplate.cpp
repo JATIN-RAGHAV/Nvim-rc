@@ -3,10 +3,10 @@
 * 	message: Yoo!!!
 **/
 #include <bits/stdc++.h>
-using namespace std;
+using namespace std; 
 #define int long long
-typedef vector<int> vi;
-typedef pair<int, int> pi;
+using vi=vector<int>;
+using pi=pair<int,int>;
 #define all(x) x.begin(),x.end()
 #define pb push_back
 
@@ -25,6 +25,6 @@ int32_t main(){
         int tt;
         cin >> tt;
         while(tt--){
-                
+
         }
 }

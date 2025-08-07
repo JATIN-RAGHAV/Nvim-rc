@@ -13,6 +13,8 @@ ostream& operator<<(ostream& os,vector<int> v){
 	return os;
 }
 
+
+
 int main(){
 
 }
