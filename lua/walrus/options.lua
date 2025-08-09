@@ -7,6 +7,7 @@ vim.opt.guicursor = "n:block"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 8
+vim.opt.expandtab = true
 vim.opt.virtualedit = 'block'
 vim.opt.termguicolors = true
 vim.opt.ignorecase = true
