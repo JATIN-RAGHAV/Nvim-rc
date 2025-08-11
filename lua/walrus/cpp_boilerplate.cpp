@@ -18,6 +18,12 @@ ostream& operator<<(ostream& os,vector<int> v){
 	return os;
 }
 
+void solve(){
+        int n;
+        cin>>n;
+
+}
+
 int32_t main(){
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
@@ -25,6 +31,6 @@ int32_t main(){
         int tt;
         cin >> tt;
         while(tt--){
-
+                solve();
         }
 }
