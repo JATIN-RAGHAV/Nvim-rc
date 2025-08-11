@@ -31,10 +31,12 @@ vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua"
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end,{desc="Go to my rc directory"})
 vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end,{desc="To to my plugins directory"})
 vim.keymap.set('n', '<leader>lsp', function () vim.cmd.Ex("~/.config/nvim/lua/lsps") end,{desc="Go to my lsps directory"})
+
 vim.keymap.set('n', '<leader>e' , vim.diagnostic.open_float,{desc="Show the error in floating window"});
 vim.keymap.set('n', '<leader>ca', function ()
         vim.lsp.buf.code_action({filter = function(a) return a.isPreferred end, apply=true});
 end, {noremap = true, silent = true,desc="Code Action"})
 
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch,{desc="Remove hilight search"})
+
 vim.keymap.set('n', '<leader>sa','ggVGy<C-o>',{desc="Yank the whole file"})
