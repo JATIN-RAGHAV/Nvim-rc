@@ -1,3 +1,5 @@
+require "walrus.cp.snippets"
+
 local path_cp = vim.fn.expand("~/.config/nvim/lua/walrus/cp/cpp_boilerplate.cpp")
 local file_cp = io.open(path_cp,"r")
 local blp_cp = "hello, world"

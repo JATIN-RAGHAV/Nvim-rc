@@ -1,5 +1,5 @@
 vim.keymap.set('n', '<leader>sex', function() print"sex" end, {desc="Prints Sex"})
-vim.keymap.set('n', '<leader>pv', function() vim.cmd.Ex() end)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true,desc="Page half down"})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true, silent = true, desc="Page half up"})
