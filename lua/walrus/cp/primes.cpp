@@ -7,7 +7,7 @@ void spf(){
         is_prime[0]=is_prime[1]=false;
         spfv[1]=1;
         for(int x=2;(long long)x*x<range;x++){
-                if(is_prime[x] && (long long)x*x < range){
+                if(is_prime[x] && x<range){
                         spfv[x]=x;
                         primes.push_back(x);
                         for(int i=x*x; i<range;i+=x){

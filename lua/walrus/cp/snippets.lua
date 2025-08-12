@@ -4,6 +4,10 @@ local blp_primes = "PRIMES HERE"
 if file_primes~=nil then
         blp_primes = file_primes:read('*a')
 end
-vim.keymap.set('n', '<leader>prms' , function ()
-        vim.api.nvim_put(vim.split(blp_primes,'\n'),"c",true,true)
-end,{desc="This prints boiler plate code for sieve prime and for spf"})
+vim.api.nvim_create_user_command(
+        'Sieve',
+        function ()
+                vim.api.nvim_put(vim.split(blp_primes,'\n'),"c",true,true)
+        end,
+        {desc="This prints boiler plate code for sieve prime and for spf"}
+)
