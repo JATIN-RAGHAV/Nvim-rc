@@ -19,8 +19,6 @@ ostream& operator<<(ostream& os,vector<int> v){
 }
 
 void solve(){
-        int n;
-        cin>>n;
 
 }
 

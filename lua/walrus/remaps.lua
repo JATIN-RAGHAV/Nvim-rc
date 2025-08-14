@@ -1,4 +1,3 @@
-vim.keymap.set('n', '<leader>sex', function() print"sex" end, {desc="Prints Sex"})
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true,desc="Page half down"})
@@ -18,14 +17,14 @@ vim.keymap.set('n', '<leader>fd', '<C-w>99_', {noremap = true, silent = true, de
 
 vim.keymap.set('n','<leader>pp', function()
         local lines = table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n')
-        local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
-        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 5, 0, 10)
         vim.print(lines)
+        local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
+        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 0, 0, 10)
 end,{desc="Shows the magical powers that vim provides"})
 
 vim.keymap.set('n','<leader>it', vim.cmd.InspectTree, {desc="Inspect Tree"})
-vim.keymap.set('n','<leader>opt', vim.cmd.options,{desc="Show options"})
 vim.keymap.set('n', '<leader>li', vim.cmd.LspInfo,{desc="LSP Info"})
+vim.keymap.set('n','<leader>opt', vim.cmd.options,{desc="Show options"})
 
 vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end,{desc="Go to init.lua"})
 vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end,{desc="Go to my rc directory"})
