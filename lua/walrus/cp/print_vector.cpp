@@ -1,5 +1,3 @@
-#include "bits/stdc++.h"
-using namespace std;
 template<typename T>
 ostream& operator<<(ostream& os,vector<T> v){
 	if(v.size()){
@@ -12,10 +10,4 @@ ostream& operator<<(ostream& os,vector<T> v){
 		os<<"[]\n";
 	}
 	return os;
-}
-
-
-
-int main(){
-
 }
