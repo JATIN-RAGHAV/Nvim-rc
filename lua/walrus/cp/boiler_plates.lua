@@ -22,3 +22,15 @@ end
 vim.keymap.set('n', '<leader>plc', function ()
         vim.api.nvim_buf_set_lines(0,0,-1,false,vim.split(blp_lc,'\n'))
 end,{desc="Prints boiler plate code for leetcode problems"})
+
+--####################################################################################################
+
+local path_cses = vim.fn.expand("~/.config/nvim/lua/walrus/cp/cses_boilerplate.cpp")
+local file_cses = io.open(path_cses,'r')
+local blp_cses = "Hi"
+if file_cses~=nil then
+        blp_cses = file_cses:read('*a')
+end
+vim.keymap.set('n', '<leader>cse', function ()
+        vim.api.nvim_buf_set_lines(0,0,-1,false,vim.split(blp_cses,'\n'))
+end,{desc="Prints boiler plate code for my cses problems"})

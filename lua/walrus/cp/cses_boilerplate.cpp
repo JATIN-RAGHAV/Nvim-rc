@@ -4,20 +4,10 @@
 **/
 #include <bits/stdc++.h>
 using namespace std; 
-using ll = long long;
-using vi = vector<int>;
-
-void solve(){
-
-}
+using vi=vector<int>;
 
 int32_t main(){
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
 
-        int tt;
-        cin >> tt;
-        while(tt--){
-                solve();
-        }
 }

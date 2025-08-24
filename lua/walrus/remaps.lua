@@ -2,6 +2,7 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true,desc="Page half down"})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true, silent = true, desc="Page half up"})
+vim.keymap.set('x', '<leader>p' ,[["_dP]])
 
 vim.keymap.set('n', '<leader>bl', vim.cmd.ls,{desc="List the buffers"})
 vim.keymap.set('n', '<leader>bn', vim.cmd.bnext,{desc="Go to the next buffer"})

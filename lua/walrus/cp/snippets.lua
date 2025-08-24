@@ -54,3 +54,15 @@ vim.keymap.set('n' ,'<leader>mod' , function ()
 end,
 {desc="Prints snippet for calculating mod inverse for some numbers"})
 
+--####################################################################################################
+
+local path_diophantine = vim.fn.expand("~/.config/nvim/lua/walrus/cp/diophantine.cpp")
+local file_diophantine= io.open(path_diophantine,'r')
+local blp_diophantine= "Diophantine code will go here"
+if file_diophantine~= nil then
+	blp_diophantine = file_diophantine:read("*a")
+end
+vim.keymap.set('n' ,'<leader>dio' , function ()
+	vim.api.nvim_put(vim.split(blp_diophantine,'\n'),"c",true,true)
+end,
+{desc="Prints the code for solving a diophantine equaition"})
