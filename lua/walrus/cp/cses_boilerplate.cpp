@@ -4,10 +4,8 @@
 **/
 #include <bits/stdc++.h>
 using namespace std; 
-using vi=vector<int>;
 
-int32_t main(){
+int main(){
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
-
 }

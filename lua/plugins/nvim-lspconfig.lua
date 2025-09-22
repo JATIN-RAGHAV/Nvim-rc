@@ -23,7 +23,6 @@ return {
         config = function()
                 local lspconfig = require("lspconfig")
 
-                lspconfig.clangd.setup(require 'lsps.clangd')
                 lspconfig.lua_ls.setup(require'lsps.lua_ls')
                 lspconfig.pylsp.setup(require'lsps.pylsp')
                 lspconfig.ts_ls.setup(require 'lsps.ts_ls')

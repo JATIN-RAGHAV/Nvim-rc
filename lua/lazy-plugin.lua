@@ -20,6 +20,9 @@ require("lazy").setup({
         spec = {
                 {import = "plugins"},
         },
-        install = { colorscheme = { "tokyonight-night" } },
-        checker = { enabled = true },
+        install = { colorscheme = { "rosepine_dawn" } },
+        checker = {
+                enabled = true,
+                frequency = 3600,
+        }
 })

@@ -14,6 +14,10 @@ vim.opt.scrolloff = 8
 vim.g.undofile = true
 vim.g.undodir = vim.fn.stdpath('state') .. '/undo'
 vim.g.netrw_banner=0
+vim.api.nvim_set_hl(0, 'Normal', { ctermbg = 'NONE'})
+vim.api.nvim_set_hl(0, 'NormalNC', { ctermbg = 'NONE'})
+vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = 'NONE'})
+vim.api.nvim_set_hl(0, 'Pmenu', { ctermbg = 'NONE'})
 vim.api.nvim_create_autocmd("FileType",{
 	pattern="netrw",
 	callback = function ()

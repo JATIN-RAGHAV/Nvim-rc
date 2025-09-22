@@ -13,8 +13,8 @@ return{
                                         extension = 'cpp',
                                         template = nil,
                                         compile = {
-                                                main = 'clang++',
-                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '$FILENAME_WITHOUT_EXTENSION' ,'-I/opt/homebrew/Cellar/gcc@12/12.4.0/bin/../lib/gcc/12/gcc/aarch64-apple-darwin23/12/../../../../../../include/c++/12/aarch64-apple-darwin23','-std=c++20'},
+                                                main = 'g++-15',
+                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '$FILENAME_WITHOUT_EXTENSION' ,'-I/Users/jatinraghav/.local/include','-std=c++20'},
                                         },
                                         execute = {
                                                 main = './$FILENAME_WITHOUT_EXTENSION',

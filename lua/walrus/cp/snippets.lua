@@ -66,3 +66,32 @@ vim.keymap.set('n' ,'<leader>dio' , function ()
 	vim.api.nvim_put(vim.split(blp_diophantine,'\n'),"c",true,true)
 end,
 {desc="Prints the code for solving a diophantine equaition"})
+
+--####################################################################################################
+
+local path_abs_summ = vim.fn.expand("~/.config/nvim/lua/walrus/cp/abs_summ.cpp")
+local file_abs_summ = io.open(path_abs_summ,'r')
+local blp_abs_summ = "Prints function to calculate absolute summation for a vector"
+if file_abs_summ ~= nil then
+	blp_abs_summ = file_abs_summ:read("*a")
+end
+vim.keymap.set('n' ,'<leader>sum' , function ()
+	vim.api.nvim_put(vim.split(blp_abs_summ,'\n'),"c",true,true)
+end,
+{desc="Prints function to calculate absolute summation for a vector"})
+
+--####################################################################################################
+
+local path_pbds = vim.fn.expand("~/.config/nvim/lua/walrus/cp/pbds.cpp")
+local file_pbds = io.open(path_pbds,'r')
+local blp_pbds = "Prints function to calculate absolute summation for a vector"
+if file_pbds ~= nil then
+	blp_pbds = file_pbds:read("*a")
+end
+vim.api.nvim_create_user_command(
+        'PBDS',
+        function ()
+                vim.api.nvim_put(vim.split(blp_pbds,'\n'),"c",true,true);
+        end,
+        {desc="Puts code for Policy Based Data Structures"}
+)

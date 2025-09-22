@@ -39,4 +39,4 @@ end, {noremap = true, silent = true,desc="Code Action"})
 
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch,{desc="Remove hilight search"})
 
-vim.keymap.set('n', '<leader>sa','ggVGy<C-o>',{desc="Yank the whole file"})
+vim.keymap.set('n', '<leader>sa',function()vim.cmd("%y")end,{desc="Yank the whole file"})
