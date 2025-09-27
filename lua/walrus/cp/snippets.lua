@@ -27,22 +27,6 @@ end,
 
 --####################################################################################################
 
-local path_print_index_sort = vim.fn.expand("~/.config/nvim/lua/walrus/cp/index_sort.path_print_vector")
-local file_print_index_sort = io.open(path_print_index_sort,'r')
-local blp_print_index_sort = "index sort"
-if file_print_index_sort ~= nil then
-	blp_print_index_sort = file_print_index_sort:read('*a')
-end
-vim.api.nvim_create_user_command(
-	"Iota",
-	function()
-		vim.api.nvim_put(vim.split(blp_print_index_sort,'\n'),'c',true,true)
-	end,
-	{desc="Prints boilerplate for iota sort"}
-)
-
---####################################################################################################
-
 local path_mod_inverse = vim.fn.expand("~/.config/nvim/lua/walrus/cp/mod_inverse.cpp")
 local file_mod_inverse = io.open(path_mod_inverse,'r')
 local blp_mod_inverse = "mod inverser function"
@@ -69,22 +53,9 @@ end,
 
 --####################################################################################################
 
-local path_abs_summ = vim.fn.expand("~/.config/nvim/lua/walrus/cp/abs_summ.cpp")
-local file_abs_summ = io.open(path_abs_summ,'r')
-local blp_abs_summ = "Prints function to calculate absolute summation for a vector"
-if file_abs_summ ~= nil then
-	blp_abs_summ = file_abs_summ:read("*a")
-end
-vim.keymap.set('n' ,'<leader>sum' , function ()
-	vim.api.nvim_put(vim.split(blp_abs_summ,'\n'),"c",true,true)
-end,
-{desc="Prints function to calculate absolute summation for a vector"})
-
---####################################################################################################
-
 local path_pbds = vim.fn.expand("~/.config/nvim/lua/walrus/cp/pbds.cpp")
 local file_pbds = io.open(path_pbds,'r')
-local blp_pbds = "Prints function to calculate absolute summation for a vector"
+local blp_pbds = "Puts code for Policy Based Data Structures"
 if file_pbds ~= nil then
 	blp_pbds = file_pbds:read("*a")
 end
@@ -94,4 +65,20 @@ vim.api.nvim_create_user_command(
                 vim.api.nvim_put(vim.split(blp_pbds,'\n'),"c",true,true);
         end,
         {desc="Puts code for Policy Based Data Structures"}
+)
+
+--####################################################################################################
+
+local path_pow = vim.fn.expand("~/.config/nvim/lua/walrus/cp/pow.cpp")
+local file_pow = io.open(path_pow,'r')
+local blp_pow = "Prints function to calculate exponent"
+if file_pow ~= nil then
+	blp_pow = file_pow:read("*a")
+end
+vim.api.nvim_create_user_command(
+        'Pow',
+        function ()
+                vim.api.nvim_put(vim.split(blp_pow,'\n'),"c",true,true);
+        end,
+        {desc="Prints function to calculate exponent"}
 )

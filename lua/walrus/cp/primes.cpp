@@ -1,4 +1,4 @@
-const int range=1e6+1;
+int range=1e6+1;
 vector<int> spfv(range);
 vector<int> primes;
 bitset<range>is_prime(true);
