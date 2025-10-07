@@ -40,3 +40,9 @@ end, {noremap = true, silent = true,desc="Code Action"})
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch,{desc="Remove hilight search"})
 
 vim.keymap.set('n', '<leader>sa',function()vim.cmd("%y")end,{desc="Yank the whole file"})
+
+vim.keymap.set('n','<leader>cmp',function()
+        vim.cmd [[
+                vsplit | terminal bash -c 'g++-15 "%:p" -o /tmp/my_c_file && /tmp/my_c_file'
+        ]]
+end, {desc = "To run the current cpp file in a temp buffer"});
