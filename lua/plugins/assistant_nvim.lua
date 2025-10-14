@@ -14,13 +14,14 @@ return{
                                         template = nil,
                                         compile = {
                                                 main = 'g++-15',
-                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '$FILENAME_WITHOUT_EXTENSION' ,'-I/Users/jatinraghav/.local/include','-std=c++20'},
+                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '/tmp/$FILENAME_WITHOUT_EXTENSION' ,'-I/Users/jatinraghav/.local/include','-std=c++20'},
                                         },
                                         execute = {
-                                                main = './$FILENAME_WITHOUT_EXTENSION',
+                                                main = '/tmp/$FILENAME_WITHOUT_EXTENSION',
                                                 args = nil,
                                         },
                                 },
+                                python={}
                         },
                         ui = {
                                 border = 'double',
