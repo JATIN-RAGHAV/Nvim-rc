@@ -42,7 +42,20 @@ vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch,{desc="Remove hilight search"})
 vim.keymap.set('n', '<leader>sa',function()vim.cmd("%y")end,{desc="Yank the whole file"})
 
 vim.keymap.set('n','<leader>cmp',function()
-        vim.cmd [[
-                vsplit | terminal bash -c 'g++-15 "%:p" -o /tmp/my_c_file && /tmp/my_c_file'
-        ]]
+        --we must use terminal
+        --if we use terminal we get minimal bash iso
+        --time management system must be in this bash
+        --we have to use vim to compile since we need name of file
+        --bash doesn't have float point subtraction, so we use bc
+        --we can't use lua since we are here using vim api and after calling it lua goes on it's marry way
+        --this was kinda tough
+        --but certainly didn't take 7 hours
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local start_time = [[start=$(date +\%s.\%N) && ]]
+        local compile = [[g++-15 "%:p" -o /tmp/my_c_file && ]]
+        local end_time = [[end=$(date +\%s.\%N) && ]]
+        local dur = [[dur=$(echo $end-$start | bc) && ]]
+        local print_dur = [[echo Time to Compile: $dur && ]]
+        local run = [[/tmp/my_c_file']]
+        vim.cmd(split_bash..start_time..compile..end_time..dur..print_dur..run)
 end, {desc = "To run the current cpp file in a temp buffer"});

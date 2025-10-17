@@ -18,6 +18,7 @@ vim.api.nvim_set_hl(0, 'Normal', { ctermbg = 'NONE'})
 vim.api.nvim_set_hl(0, 'NormalNC', { ctermbg = 'NONE'})
 vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = 'NONE'})
 vim.api.nvim_set_hl(0, 'Pmenu', { ctermbg = 'NONE'})
+vim.opt.shell = "/opt/homebrew/bin/bash"
 vim.api.nvim_create_autocmd("FileType",{
 	pattern="netrw",
 	callback = function ()

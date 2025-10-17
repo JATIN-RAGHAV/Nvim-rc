@@ -27,6 +27,7 @@ return {
                 vim.lsp.enable('pylsp')
                 vim.lsp.enable('lua_ls')
                 vim.lsp.enable('rust_analyzer')
+                vim.lsp.enable('clangd')
 
                 vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})
