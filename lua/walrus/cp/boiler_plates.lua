@@ -9,10 +9,22 @@ if file_cp~=nil then
 end
 vim.keymap.set('n', '<leader>blp', function ()
         vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(blp_cp,'\n'))
-end,{desc="Prints boiler plate code for competitive programming"})
+end,{desc="Prints boiler plate code for competitive programming Cpp"})
 
 --####################################################################################################
 
+local path_rs = vim.fn.expand("~/.config/nvim/lua/walrus/cp/rust_boilerplate.rs")
+local file_rs = io.open(path_rs,"r")
+local blp_rs = "hello, world"
+if file_rs~=nil then
+        blp_rs = file_rs:read('*a')
+        file_rs:close()
+end
+vim.keymap.set('n', '<leader>rst', function ()
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(blp_rs,'\n'))
+end,{desc="Prints boiler plate code for competitive programming in Rust"})
+
+--####################################################################################################
 local path_lc = vim.fn.expand("~/.config/nvim/lua/walrus/cp/leetcode_boilerplate.cpp")
 local file_lc = io.open(path_lc,'r')
 local blp_lc = "Hi"
