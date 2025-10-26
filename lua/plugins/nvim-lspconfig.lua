@@ -29,7 +29,7 @@ return {
                 vim.lsp.enable('rust_analyzer')
                 vim.lsp.enable('clangd')
 
-                vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, {desc='Goto definition'});
+                vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})
         end,
 }

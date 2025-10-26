@@ -21,7 +21,18 @@ return{
                                                 args = nil,
                                         },
                                 },
-                                python={}
+                                rust = {
+                                        extension = 'rs',
+                                        template = nil,
+                                        compile = {
+                                                main = 'rustc',
+                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '/tmp/$FILENAME_WITHOUT_EXTENSION'},
+                                        },
+                                        execute = {
+                                                main = '/tmp/$FILENAME_WITHOUT_EXTENSION',
+                                                args = nil,
+                                        },
+                                },
                         },
                         ui = {
                                 border = 'double',
