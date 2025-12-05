@@ -33,6 +33,17 @@ return{
                                                 args = nil,
                                         },
                                 },
+                                go = {
+                                        extension = 'go',
+                                        compile = {
+                                                main = 'go',
+                                                args = { 'build','-o', '/tmp/$FILENAME_WITHOUT_EXTENSION','$FILENAME_WITH_EXTENSION'},
+                                        },
+                                        execute = {
+                                                main = '/tmp/$FILENAME_WITHOUT_EXTENSION',
+                                                args = nil,
+                                        },
+                                },
                         },
                         ui = {
                                 border = 'double',

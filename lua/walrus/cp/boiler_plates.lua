@@ -13,6 +13,19 @@ end,{desc="Prints boiler plate code for competitive programming Cpp"})
 
 --####################################################################################################
 
+local path_go = vim.fn.expand("~/.config/nvim/lua/walrus/cp/go_boilerplate.go")
+local file_go = io.open(path_go,"r")
+local blp_go = "hello, world"
+if file_go~=nil then
+        blp_go = file_go:read('*a')
+        file_go:close()
+end
+vim.keymap.set('n', '<leader>got', function ()
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(blp_go,'\n'))
+end,{desc="Prints boiler plate code for competitive programming in Go"})
+
+--####################################################################################################
+
 local path_rs = vim.fn.expand("~/.config/nvim/lua/walrus/cp/rust_boilerplate.rs")
 local file_rs = io.open(path_rs,"r")
 local blp_rs = "hello, world"

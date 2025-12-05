@@ -1,5 +1,4 @@
 return {
-        cmd = { "bunx", "--bun", "typescript-language-server", "--stdio" },
         filetypes = {
                 "vue",
                 "react",
@@ -8,6 +7,8 @@ return {
                 "javascript.jsx",
                 "typescript",
                 "typescriptreact",
-                "typescript.tsx"
+                "typescript.tsx",
+                "tsx",
+                "jsx"
         },
 }

@@ -1,9 +1,4 @@
 return {
-        {"folke/tokyonight.nvim",
-        config=function() 
-                vim.cmd.colorscheme 'tokyonight-night'
-        end
-        },
         {
                 "nvim-treesitter/nvim-treesitter",
                 config = function()
@@ -16,7 +11,9 @@ return {
                                 highlight = {
                                         enable = true,
                                 },
-
+                                indent = {
+                                        enable = true,
+                                },
                                 incremental_selection = {
                                         enable = true,
                                         keymaps = {
@@ -72,10 +69,4 @@ return {
                         vim.cmd('normal! TSUpdate')
                 end
         },
-        {
-                "nvim-treesitter/nvim-treesitter-textobjects",
-                {
-                        
-                }
-        }
 }

@@ -59,3 +59,40 @@ vim.keymap.set('n','<leader>cmp',function()
         local run = [[/tmp/my_c_file']]
         vim.cmd(split_bash..start_time..compile..end_time..dur..print_dur..run)
 end, {desc = "To run the current cpp file in a temp buffer"});
+
+vim.keymap.set('n','<leader>py',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[python3 "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current python file in a temp buffer"});
+
+vim.keymap.set('n','<leader>php',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[php "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current php file in a temp buffer"});
+
+vim.keymap.set('n','<leader>dart',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[dart "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current dart file in a temp buffer"});
+
+vim.keymap.set('n','<leader>lse',function ()
+        vim.cmd("LspStop")
+end)
+vim.keymap.set('n','<leader>lsb',function ()
+        vim.cmd("LspStart clangd")
+end)
+
+vim.keymap.set('n','<leader>ray',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local compile = [[eval g++ $(pkg-config --libs --cflags raylib) "%:p" -o /tmp/raylib.out && ]]
+        local run = [[/tmp/raylib.out']]
+        vim.cmd(split_bash .. compile .. run)
+end
+)
+
+vim.keymap.set('n', '<leader>fmt', function()
+        vim.cmd'%!clang-format'
+end)
