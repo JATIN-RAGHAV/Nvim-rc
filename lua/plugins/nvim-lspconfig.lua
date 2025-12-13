@@ -24,6 +24,7 @@ return {
 
                 vim.lsp.config('lua_ls',require'lsps.lua_ls')
                 vim.lsp.config('ts_ls',require 'lsps.ts_ls')
+                vim.lsp.config('ruby-lsp',require 'lsps.ruby_lsp')
 
                 vim.lsp.enable('pylsp')
                 vim.lsp.enable('lua_ls')
@@ -34,6 +35,10 @@ return {
                 vim.lsp.enable('tailwindcss')
                 vim.lsp.enable('phpactor')
                 vim.lsp.enable('dartls')
+                vim.lsp.enable('ocamllsp')
+                vim.lsp.enable('ruby-lsp')
+                vim.lsp.enable('zls')
+                vim.lsp.enable('sourcekit')
 
                 vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})

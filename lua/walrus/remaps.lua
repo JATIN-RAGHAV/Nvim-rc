@@ -78,6 +78,36 @@ vim.keymap.set('n','<leader>dart',function()
         vim.cmd(split_bash..run)
 end, {desc = "To run the current dart file in a temp buffer"});
 
+vim.keymap.set('n','<leader>cml',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[ocaml "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current ocaml file in a temp buffer"});
+
+vim.keymap.set('n','<leader>lua',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[lua "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current lua file in a temp buffer"});
+
+vim.keymap.set('n','<leader>ruby',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[ruby "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current ruby file in a temp buffer"});
+
+vim.keymap.set('n','<leader>zig',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[zig run "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current zig file in a temp buffer"});
+
+vim.keymap.set('n','<leader>sft',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[swift "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current swift file in a temp buffer"});
+
 vim.keymap.set('n','<leader>lse',function ()
         vim.cmd("LspStop")
 end)
