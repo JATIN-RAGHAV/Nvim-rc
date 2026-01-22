@@ -110,10 +110,10 @@ end, {desc = "To run the current swift file in a temp buffer"});
 
 vim.keymap.set('n','<leader>lse',function ()
         vim.cmd("LspStop")
-end)
+end,{desc = "To stop the LSP"})
 vim.keymap.set('n','<leader>lsb',function ()
         vim.cmd("LspStart clangd")
-end)
+end,{desc = "To start the LSP"})
 
 vim.keymap.set('n','<leader>ray',function()
         local split_bash = [[vsplit | terminal bash -c ']]
