@@ -14,7 +14,7 @@ return{
                                         template = nil,
                                         compile = {
                                                 main = 'g++-15',
-                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '/tmp/$FILENAME_WITHOUT_EXTENSION' ,'-I/Users/jatinraghav/.local/include','-std=c++20'},
+                                                args = { '$FILENAME_WITH_EXTENSION', '-o', '/tmp/$FILENAME_WITHOUT_EXTENSION' ,'-I/Users/jatinraghav/.local/include','-std=c++23'},
                                         },
                                         execute = {
                                                 main = '/tmp/$FILENAME_WITHOUT_EXTENSION',

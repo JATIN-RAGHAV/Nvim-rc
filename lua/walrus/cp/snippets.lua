@@ -82,3 +82,19 @@ vim.api.nvim_create_user_command(
         end,
         {desc="Prints function to calculate exponent"}
 )
+
+local path_data_structures = vim.fn.expand("~/.config/nvim/lua/walrus/cp/data_structures.cpp")
+local file_data_structures = io.open(path_data_structures,'r')
+local blp_data_structures = "data_structures HERE"
+if file_data_structures~=nil then
+        blp_data_structures = file_data_structures:read('*a')
+end
+vim.api.nvim_create_user_command(
+        'Struct',
+        function ()
+                vim.api.nvim_put(vim.split(blp_data_structures,'\n'),"c",true,true)
+        end,
+        {desc="This prints boiler plate code for data structures as classes"}
+)
+
+--####################################################################################################

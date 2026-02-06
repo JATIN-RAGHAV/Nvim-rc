@@ -1,14 +1,12 @@
-template<typename T>
-ostream& operator<<(ostream& os,vector<T> a){
-        if(!a.size()){
-                os<<"[]";
+template <class T>
+ostream& operator<<(ostream& os, vector<T>& v){
+        if(v.size() == 0){
+                os << "[]\n";
+                return os;
         }
-        else{
-                os<<'['<<a[0];
-                for(int i = 1;i<a.size();i++){
-                        os<<','<<a[i];
-                }
-                os<<"]\n";
+        os<<'[';
+        for(int i = 0;i<v.size();i++){
+                os<<v[i]<<",]"[i==v.size()-1];
         }
         return os;
 }

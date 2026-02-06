@@ -60,6 +60,10 @@ vim.keymap.set('n','<leader>cmp',function()
         vim.cmd(split_bash..start_time..compile..end_time..dur..print_dur..run)
 end, {desc = "To run the current cpp file in a temp buffer"});
 
+vim.keymap.set('n','<leader>back',function()
+        vim.cmd('vsplit | terminal bun run back')
+end, {desc = "Run backend with Bun"});
+
 vim.keymap.set('n','<leader>py',function()
         local split_bash = [[vsplit | terminal bash -c ']]
         local run = [[python3 "%:p"']]
