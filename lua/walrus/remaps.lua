@@ -20,7 +20,7 @@ vim.keymap.set('n','<leader>pp', function()
         local lines = table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n')
         vim.print(lines)
         local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
-        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 0, 0, 10)
+        vim.api.nvim_buf_add_highlight(0, ns_id, "String", 0, 0, 20)
 end,{desc="Shows the magical powers that vim provides"})
 
 vim.keymap.set('n','<leader>it', vim.cmd.InspectTree, {desc="Inspect Tree"})
@@ -59,6 +59,12 @@ vim.keymap.set('n','<leader>cmp',function()
         local run = [[/tmp/my_c_file']]
         vim.cmd(split_bash..start_time..compile..end_time..dur..print_dur..run)
 end, {desc = "To run the current cpp file in a temp buffer"});
+
+vim.keymap.set('n','<leader>bun',function()
+        local split_bash = [[vsplit | terminal bash -c ']]
+        local run = [[bun run "%:p"']]
+        vim.cmd(split_bash..run)
+end, {desc = "To run the current TS or JS file in a temp buffer"});
 
 vim.keymap.set('n','<leader>back',function()
         vim.cmd('vsplit | terminal bun run back')
@@ -129,4 +135,16 @@ end
 
 vim.keymap.set('n', '<leader>fmt', function()
         vim.cmd'%!clang-format'
+end)
+
+vim.keymap.set('n',"<leader>a'",function ()
+                vim.api.nvim_put({"``"},"c",true,true)
+end)
+
+vim.keymap.set('n','<leader>rn', function () vim.lsp.buf.rename() end)
+vim.keymap.set('n','d[',function ()
+    vim.diagnostic.goto_next()
+end)
+vim.keymap.set('n','d]',function ()
+    vim.diagnostic.goto_prev()
 end)
