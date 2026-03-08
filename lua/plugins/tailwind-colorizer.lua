@@ -1,7 +1,8 @@
-return{
-        "roobert/tailwindcss-colorizer-cmp.nvim",
-        dependencies = { "hrsh7th/nvim-cmp" },
-        config = function()
-                require("tailwindcss-colorizer-cmp").setup()
-        end,
+return {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+    },
 }

@@ -148,3 +148,8 @@ end)
 vim.keymap.set('n','d]',function ()
     vim.diagnostic.goto_prev()
 end)
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { '<filetype>' },
+    callback = function() vim.treesitter.start() end,
+})

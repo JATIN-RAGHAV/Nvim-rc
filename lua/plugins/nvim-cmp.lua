@@ -7,6 +7,8 @@ return{
         'hrsh7th/cmp-cmdline',      -- command-line completions
         'L3MON4D3/LuaSnip',         -- snippet engine
         'saadparwaiz1/cmp_luasnip', -- snippet source
+        "tailwind-tools",
+        "onsails/lspkind-nvim"
     },
     config = function()
 
@@ -32,7 +34,9 @@ return{
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
             }),
             formatting = {
-                format = require("tailwindcss-colorizer-cmp").formatter,
+                format = require("lspkind").cmp_format({
+                    before = require("tailwind-tools.cmp").lspkind_format
+                }),
             },
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },

@@ -33,12 +33,6 @@ return {
                 vim.lsp.enable('gopls')
                 vim.lsp.enable('ts_ls')
                 vim.lsp.enable('tailwindcss')
-                vim.lsp.enable('phpactor')
-                vim.lsp.enable('dartls')
-                vim.lsp.enable('ocamllsp')
-                vim.lsp.enable('ruby-lsp')
-                vim.lsp.enable('zls')
-                vim.lsp.enable('sourcekit')
 
                 vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
                 vim.keymap.set('n', '<S-l>', vim.lsp.buf.hover, {desc='Define the keyword under cursor'})
