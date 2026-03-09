@@ -4,6 +4,7 @@
 **/
 #include <bits/stdc++.h>
 using namespace std; 
+namespace rn = std::ranges;
 
 void solve(){
 
