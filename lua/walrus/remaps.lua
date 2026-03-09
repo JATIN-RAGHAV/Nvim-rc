@@ -142,11 +142,11 @@ vim.keymap.set('n',"<leader>a'",function ()
 end)
 
 vim.keymap.set('n','<leader>rn', function () vim.lsp.buf.rename() end)
-vim.keymap.set('n','d[',function ()
-    vim.diagnostic.goto_next()
-end)
 vim.keymap.set('n','d]',function ()
-    vim.diagnostic.goto_prev()
+    vim.diagnostic.jump({count=1})
+end)
+vim.keymap.set('n','d[',function ()
+    vim.diagnostic.jump({count=-1})
 end)
 
 vim.api.nvim_create_autocmd('FileType', {
