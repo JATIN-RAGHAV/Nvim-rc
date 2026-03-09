@@ -153,3 +153,29 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = { '<filetype>' },
     callback = function() vim.treesitter.start() end,
 })
+
+-- By default, Codeium is enabled
+vim.keymap.set(
+        'n','<leader>ag',
+        function()
+            if vim.g.copilot_enabled then
+                vim.cmd("Codeium Toggle")
+                vim.cmd("Copilot disable")
+                vim.g.copilot_enabled = false
+            else
+                vim.cmd("Copilot enable")
+                vim.cmd("Codeium Toggle")
+                vim.g.copilot_enabled = true
+            end
+        end,
+        {desc="Switches between Copilot and Codeium"}
+)
+
+vim.keymap.set('n','<leader>aw',function()
+    if(vim.g.copilot_enabled) then
+        print("Copilot is currently active")
+    else
+        print("Codeium is currently active")
+    end
+end,
+{desc="To see which AI assistant is currently active"})

@@ -35,7 +35,11 @@ return{
             }),
             formatting = {
                 format = require("lspkind").cmp_format({
-                    before = require("tailwind-tools.cmp").lspkind_format
+                    before = require("tailwind-tools.cmp").lspkind_format,
+                    mode = "symbol",
+                    maxwidth = 50,
+                    ellipsis_char = '...',
+                    symbol_map = { Codeium = "", }
                 }),
             },
             sources = cmp.config.sources({
@@ -45,6 +49,7 @@ return{
                 { name = 'clangd' },
                 { name = 'rust_analyzer' },
                 { name = 'tailwindcss' },
+                { name = 'codeium'}
             },{
                     { name = 'buffer' },
                     { name = 'path' },
