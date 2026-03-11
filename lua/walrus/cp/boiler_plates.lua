@@ -38,17 +38,6 @@ vim.keymap.set('n', '<leader>rst', function ()
 end,{desc="Prints boiler plate code for competitive programming in Rust"})
 
 --####################################################################################################
-local path_lc = vim.fn.expand("~/.config/nvim/lua/walrus/cp/leetcode_boilerplate.cpp")
-local file_lc = io.open(path_lc,'r')
-local blp_lc = "Hi"
-if file_lc~=nil then
-        blp_lc = file_lc:read('*a')
-end
-vim.keymap.set('n', '<leader>plc', function ()
-        vim.api.nvim_buf_set_lines(0,0,-1,false,vim.split(blp_lc,'\n'))
-end,{desc="Prints boiler plate code for leetcode problems"})
-
---####################################################################################################
 
 local path_cses = vim.fn.expand("~/.config/nvim/lua/walrus/cp/cses_boilerplate.cpp")
 local file_cses = io.open(path_cses,'r')
