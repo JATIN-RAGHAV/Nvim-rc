@@ -15,7 +15,7 @@ return{
                 map_keys = true,
                 accept_fallback = nil,
                 key_bindings = {
-                    accept = "<Tab>",
+                    accept = "<c-e>",
                     accept_word = false,
                     accept_line = false,
                     clear = false,
