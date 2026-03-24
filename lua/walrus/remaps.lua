@@ -52,7 +52,7 @@ vim.keymap.set('n','<leader>cmp',function()
         --but certainly didn't take 7 hours
         local split_bash = [[vsplit | terminal bash -c ']]
         local start_time = [[start=$(date +\%s.\%N) && ]]
-        local compile = [[g++-15 "%:p" -o /tmp/my_c_file && ]]
+        local compile = [[g++-15 -std=c++23 "%:p" -o /tmp/my_c_file && ]]
         local end_time = [[end=$(date +\%s.\%N) && ]]
         local dur = [[dur=$(echo $end-$start | bc) && ]]
         local print_dur = [[echo Time to Compile: $dur && ]]
@@ -179,3 +179,8 @@ vim.keymap.set('n','<leader>aw',function()
     end
 end,
 {desc="To see which AI assistant is currently active"})
+
+vim.keymap.set('n','<leader>ter',function ()
+    local split = [[split | terminal]]
+    vim.cmd(split)
+end)
