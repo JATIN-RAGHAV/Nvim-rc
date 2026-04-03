@@ -184,3 +184,16 @@ vim.keymap.set('n','<leader>ter',function ()
     local split = [[split | terminal]]
     vim.cmd(split)
 end)
+
+vim.keymap.set('n','<leader>tb', function()
+    if vim.opt.tabstop == 4 then
+        vim.opt.tabstop = 8
+        vim.opt.shiftwidth = 8
+        vim.opt.softtabstop = 8
+    else
+        vim.opt.tabstop = 4
+        vim.opt.shiftwidth = 4
+        vim.opt.softtabstop = 4
+    end
+end,
+{desc = "To Toggle between 4 and 8 tab spaces"})
