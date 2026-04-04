@@ -8,6 +8,7 @@ vim.opt.splitright = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+vim.g.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.virtualedit = 'block'
 vim.opt.termguicolors = true
@@ -22,24 +23,24 @@ vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = 'NONE'})
 vim.api.nvim_set_hl(0, 'Pmenu', { ctermbg = 'NONE'})
 vim.opt.shell = "/opt/homebrew/bin/bash"
 vim.api.nvim_create_autocmd("FileType",{
-	pattern="netrw",
-	callback = function ()
-		vim.opt_local.relativenumber = true
-	end
+    pattern="netrw",
+    callback = function ()
+        vim.opt_local.relativenumber = true
+    end
 })
 vim.diagnostic.config({
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "",
-      [vim.diagnostic.severity.WARN] = "",
-      [vim.diagnostic.severity.HINT] = "",
-      [vim.diagnostic.severity.INFO] = "",
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = "",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+            [vim.diagnostic.severity.WARN] = "WarningMsg",
+            [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+            [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+        },
     },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-      [vim.diagnostic.severity.WARN] = "WarningMsg",
-      [vim.diagnostic.severity.HINT] = "DiagnosticHint",
-      [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
-    },
-  },
 })

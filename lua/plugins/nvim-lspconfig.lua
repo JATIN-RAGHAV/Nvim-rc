@@ -34,6 +34,8 @@ return {
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('tailwindcss')
         vim.lsp.enable('html')
+        vim.lsp.enable('nix')
+        vim.lsp.enable('yamlls')
 
 
         vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
