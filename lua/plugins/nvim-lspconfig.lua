@@ -36,6 +36,7 @@ return {
         vim.lsp.enable('html')
         vim.lsp.enable('nix')
         vim.lsp.enable('yamlls')
+        vim.lsp.enable('docker_compose_language_service')
 
 
         vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
