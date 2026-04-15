@@ -25,6 +25,7 @@ return {
         vim.lsp.config('lua_ls',require'lsps.lua_ls')
         vim.lsp.config('ts_ls',require 'lsps.ts_ls')
         vim.lsp.config('ruby-lsp',require 'lsps.ruby_lsp')
+        vim.lsp.config('nixd',require 'lsps.nixd')
 
         vim.lsp.enable('pylsp')
         vim.lsp.enable('lua_ls')
@@ -34,9 +35,11 @@ return {
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('tailwindcss')
         vim.lsp.enable('html')
-        vim.lsp.enable('nix')
+        vim.lsp.enable('nixd')
         vim.lsp.enable('yamlls')
         vim.lsp.enable('docker_compose_language_service')
+        vim.lsp.enable('docker_language_server')
+        vim.lsp.enable('dockerls')
 
 
         vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});

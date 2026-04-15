@@ -52,7 +52,7 @@ vim.keymap.set('n','<leader>cmp',function()
     --but certainly didn't take 7 hours
     local split_bash = [[vsplit | terminal bash -c ']]
     local start_time = [[start=$(date +\%s.\%N) && ]]
-    local compile = [[g++-15 -std=c++23 "%:p" -o /tmp/my_c_file && ]]
+    local compile = [[/run/current-system/sw/bin/g++ -std=c++23 "%:p" -o /tmp/my_c_file && ]]
     local end_time = [[end=$(date +\%s.\%N) && ]]
     local dur = [[dur=$(echo $end-$start | bc) && ]]
     local print_dur = [[echo Time to Compile: $dur && ]]
@@ -117,6 +117,12 @@ vim.keymap.set('n','<leader>sft',function()
     local run = [[swift "%:p"']]
     vim.cmd(split_bash..run)
 end, {desc = "To run the current swift file in a temp buffer"});
+
+vim.keymap.set('n','<leader>nix',function()
+    local split_bash = [[vsplit | terminal bash -c ']]
+    local run = [[nix-instantiate --eval "%:p"']]
+    vim.cmd(split_bash..run)
+end, {desc = "To run the current nix file in a temp buffer"});
 
 vim.keymap.set('n','<leader>lse',function ()
     vim.cmd("LspStop")
@@ -201,3 +207,7 @@ vim.keymap.set('n','<leader>tb', function()
     end
 end,
 {desc = "To Toggle between 4 and 8 tab spaces"})
+
+vim.keymap.set('n','<leader>fmt', function()
+    vim.lsp.buf.format()
+end)
