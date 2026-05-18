@@ -211,3 +211,7 @@ end,
 vim.keymap.set('n','<leader>fmt', function()
     vim.lsp.buf.format()
 end)
+
+vim.keymap.set("n",'<leader>er',function ()
+    vim.cmd "Telescope diagnostics"
+end)
