@@ -41,6 +41,9 @@ return {
         vim.lsp.enable('docker_language_server')
         vim.lsp.enable('dockerls')
         vim.lsp.enable('terraform_lsp')
+        vim.lsp.enable('jdtls')
+        vim.lsp.enable('graphql')
+        vim.lsp.enable('prismals')
 
 
         vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
