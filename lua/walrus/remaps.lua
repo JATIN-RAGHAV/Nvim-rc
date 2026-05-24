@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+-- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true,desc="Page half down"})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true, silent = true, desc="Page half up"})
@@ -27,10 +27,19 @@ vim.keymap.set('n','<leader>it', vim.cmd.InspectTree, {desc="Inspect Tree"})
 vim.keymap.set('n', '<leader>li', vim.cmd.LspInfo,{desc="LSP Info"})
 vim.keymap.set('n','<leader>opt', vim.cmd.options,{desc="Show options"})
 
-vim.keymap.set('n', '<leader>rc', function() vim.cmd.e("~/.config/nvim/init.lua") end,{desc="Go to init.lua"})
-vim.keymap.set('n', '<leader>mrc', function() vim.cmd.Ex("~/.config/nvim/lua/walrus/") end,{desc="Go to my rc directory"})
-vim.keymap.set('n', '<leader>pl', function() vim.cmd.Ex("~/.config/nvim/lua/plugins/") end,{desc="To to my plugins directory"})
-vim.keymap.set('n', '<leader>lsp', function () vim.cmd.Ex("~/.config/nvim/lua/lsps") end,{desc="Go to my lsps directory"})
+local yazi = require"yazi"
+vim.keymap.set('n', "<leader>rc", function()
+    yazi.yazi({},"~/.config/nvim/init.lua")
+end,{desc="Go to init.lua"})
+vim.keymap.set('n', "<leader>mrc", function()
+    yazi.yazi({},"~/.config/nvim/lua/walrus/")
+end,{desc="Go to my rc directory"})
+vim.keymap.set('n', "<leader>pl", function()
+    yazi.yazi({},"~/.config/nvim/lua/plugins/")
+end,{desc="To to my plugins directory"})
+vim.keymap.set('n', '<leader>lsp', function()
+    yazi.yazi({},"~/.config/nvim/lua/lsps")
+end,{desc="Go to my lsps directory"})
 
 vim.keymap.set('n', '<leader>e' , vim.diagnostic.open_float,{desc="Show the error in floating window"});
 vim.keymap.set('n', '<leader>ca', function ()
