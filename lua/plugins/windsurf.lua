@@ -25,5 +25,6 @@ return{
             }
         })
         vim.keymap.set('i', '<c-x>', function() return codeium.Clear() end, { expr = true, silent = true })
+        vim.cmd("Codeium Toggle")
     end,
 }

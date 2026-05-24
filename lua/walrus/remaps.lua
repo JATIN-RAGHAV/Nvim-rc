@@ -215,3 +215,25 @@ end)
 vim.keymap.set("n",'<leader>er',function ()
     vim.cmd "Telescope diagnostics"
 end)
+
+vim.keymap.set("v",'<leader>srt',function ()
+    local startRow = vim.fn.getpos("v")[2] - 1;
+    local endRow = vim.fn.getpos(".")[2];
+    if startRow > endRow then
+        -- Nvim uses LuaJit 2.1 which supports Lua 5.1
+        -- But the native XOR operator ~ was added to lua in Lua 5.3
+        -- So I gotta use a temp variable instead here
+        local temp = startRow;
+        startRow = endRow;
+        endRow = temp;
+    end
+    local lines = vim.api.nvim_buf_get_lines(0,startRow,endRow,false);
+
+    table.sort(lines);
+
+    vim.api.nvim_buf_set_lines(0,startRow,endRow,false,lines);
+end)
+
+-- vim.keymap.set('n','<leader>bp', require'dap'.toggle_breakpoint);
+-- vim.keymap.set('n','<leader>db', vim.cmd'DapNew')
+-- vim.keymap.set('n','<leader>dc', vim.cmd'DapContinue')

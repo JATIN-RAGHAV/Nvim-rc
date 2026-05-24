@@ -26,6 +26,7 @@ return {
         vim.lsp.config('ts_ls',require 'lsps.ts_ls')
         vim.lsp.config('ruby-lsp',require 'lsps.ruby_lsp')
         vim.lsp.config('nixd',require 'lsps.nixd')
+        vim.lsp.config('rust_analyzer', require 'lsps.rust_analyzer')
 
         vim.lsp.enable('pylsp')
         vim.lsp.enable('lua_ls')
