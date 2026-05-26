@@ -1,60 +1,62 @@
 -- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
-vim.keymap.set('n', '<C-d>', '<C-d>zz', {noremap = true, silent = true,desc="Page half down"})
-vim.keymap.set('n', '<C-u>', '<C-u>zz', {noremap = true, silent = true, desc="Page half up"})
-vim.keymap.set('x', '<leader>p' ,[["_dP]])
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true, desc = "Page half down" })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true, desc = "Page half up" })
+vim.keymap.set('x', '<leader>p', [["_dP]])
 
-vim.keymap.set('n', '<leader>bl', vim.cmd.ls,{desc="List the buffers"})
-vim.keymap.set('n', '<leader>bn', vim.cmd.bnext,{desc="Go to the next buffer"})
-vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious,{desc="Go to the previous buffer"})
+vim.keymap.set('n', '<leader>bl', vim.cmd.ls, { desc = "List the buffers" })
+vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = "Go to the next buffer" })
+vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious, { desc = "Go to the previous buffer" })
 
-vim.keymap.set('n', '<C-j>', '<C-w>j', {noremap = true, silent = true, desc = 'Activates the window below'})
-vim.keymap.set('n', '<C-k>', '<C-w>k', {noremap = true, silent = true, desc = 'Activates the window above'})
-vim.keymap.set('n', '<C-h>', '<C-w>h', {noremap = true, silent = true, desc = 'Activates the window on left'})
-vim.keymap.set('n', '<C-l>', '<C-w>l', {noremap = true, silent = true, desc = 'Activates the window on right'})
+vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true, desc = 'Activates the window below' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true, desc = 'Activates the window above' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true, desc = 'Activates the window on left' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true, desc = 'Activates the window on right' })
 
-vim.keymap.set('n', '<leader>fu', '<C-w>99+', {noremap = true, silent = true, desc = 'Maximise the top of the current window'})
-vim.keymap.set('n', '<leader>fd', '<C-w>99_', {noremap = true, silent = true, desc = 'Maximise the bottom of the current window'})
+vim.keymap.set('n', '<leader>fu', '<C-w>99+',
+    { noremap = true, silent = true, desc = 'Maximise the top of the current window' })
+vim.keymap.set('n', '<leader>fd', '<C-w>99_',
+    { noremap = true, silent = true, desc = 'Maximise the bottom of the current window' })
 
-vim.keymap.set('n','<leader>pp', function()
-    local lines = table.concat(vim.api.nvim_buf_get_lines(0,0,-1,false),'\n')
+vim.keymap.set('n', '<leader>pp', function()
+    local lines = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n')
     vim.print(lines)
     local ns_id = vim.api.nvim_create_namespace("my_highlight_ns")
     vim.api.nvim_buf_add_highlight(0, ns_id, "String", 0, 0, 20)
-end,{desc="Shows the magical powers that vim provides"})
+end, { desc = "Shows the magical powers that vim provides" })
 
-vim.keymap.set('n','<leader>it', vim.cmd.InspectTree, {desc="Inspect Tree"})
-vim.keymap.set('n', '<leader>li', vim.cmd.LspInfo,{desc="LSP Info"})
-vim.keymap.set('n','<leader>opt', vim.cmd.options,{desc="Show options"})
+vim.keymap.set('n', '<leader>it', vim.cmd.InspectTree, { desc = "Inspect Tree" })
+vim.keymap.set('n', '<leader>li', vim.cmd.LspInfo, { desc = "LSP Info" })
+vim.keymap.set('n', '<leader>opt', vim.cmd.options, { desc = "Show options" })
 
-local yazi = require"yazi"
+local yazi = require "yazi"
 vim.keymap.set('n', "<leader>rc", function()
-    yazi.yazi({},"~/.config/nvim/init.lua")
-end,{desc="Go to init.lua"})
+    yazi.yazi({}, "~/.config/nvim/init.lua")
+end, { desc = "Go to init.lua" })
 vim.keymap.set('n', "<leader>mrc", function()
-    yazi.yazi({},"~/.config/nvim/lua/walrus/")
-end,{desc="Go to my rc directory"})
+    yazi.yazi({}, "~/.config/nvim/lua/walrus/")
+end, { desc = "Go to my rc directory" })
 vim.keymap.set('n', "<leader>pl", function()
-    yazi.yazi({},"~/.config/nvim/lua/plugins/")
-end,{desc="To to my plugins directory"})
+    yazi.yazi({}, "~/.config/nvim/lua/plugins/")
+end, { desc = "To to my plugins directory" })
 vim.keymap.set('n', '<leader>lsp', function()
-    yazi.yazi({},"~/.config/nvim/lua/lsps")
-end,{desc="Go to my lsps directory"})
+    yazi.yazi({}, "~/.config/nvim/lua/lsps")
+end, { desc = "Go to my lsps directory" })
 
-vim.keymap.set('n','<leader>sp',function()
-    vim.cmd'vsplit';
+vim.keymap.set('n', '<leader>sp', function()
+    vim.cmd 'vsplit';
 end)
 
-vim.keymap.set('n', '<leader>e' , vim.diagnostic.open_float,{desc="Show the error in floating window"});
-vim.keymap.set('n', '<leader>ca', function ()
-    vim.lsp.buf.code_action({filter = function(a) return a.isPreferred end, apply=true});
-end, {noremap = true, silent = true,desc="Code Action"})
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Show the error in floating window" });
+vim.keymap.set('n', '<leader>ca', function()
+    vim.lsp.buf.code_action({ filter = function(a) return a.isPreferred end, apply = true });
+end, { noremap = true, silent = true, desc = "Code Action" })
 
-vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch,{desc="Remove hilight search"})
+vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch, { desc = "Remove hilight search" })
 
-vim.keymap.set('n', '<leader>sa',function()vim.cmd("%y")end,{desc="Yank the whole file"})
+vim.keymap.set('n', '<leader>sa', function() vim.cmd("%y") end, { desc = "Yank the whole file" })
 
-vim.keymap.set('n','<leader>cmp',function()
+vim.keymap.set('n', '<leader>cmp', function()
     --we must use terminal
     --if we use terminal we get minimal bash iso
     --time management system must be in this bash
@@ -70,81 +72,81 @@ vim.keymap.set('n','<leader>cmp',function()
     local dur = [[dur=$(echo $end-$start | bc) && ]]
     local print_dur = [[echo Time to Compile: $dur && ]]
     local run = [[/tmp/my_c_file']]
-    vim.cmd(split_bash..start_time..compile..end_time..dur..print_dur..run)
-end, {desc = "To run the current cpp file in a temp buffer"});
+    vim.cmd(split_bash .. start_time .. compile .. end_time .. dur .. print_dur .. run)
+end, { desc = "To run the current cpp file in a temp buffer" });
 
-vim.keymap.set('n','<leader>bun',function()
+vim.keymap.set('n', '<leader>bun', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[bun run "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current TS or JS file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current TS or JS file in a temp buffer" });
 
-vim.keymap.set('n','<leader>back',function()
+vim.keymap.set('n', '<leader>back', function()
     vim.cmd('vsplit | terminal bun run back')
-end, {desc = "Run backend with Bun"});
+end, { desc = "Run backend with Bun" });
 
-vim.keymap.set('n','<leader>py',function()
+vim.keymap.set('n', '<leader>py', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[python3 "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current python file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current python file in a temp buffer" });
 
-vim.keymap.set('n','<leader>php',function()
+vim.keymap.set('n', '<leader>php', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[php "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current php file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current php file in a temp buffer" });
 
-vim.keymap.set('n','<leader>dart',function()
+vim.keymap.set('n', '<leader>dart', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[dart "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current dart file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current dart file in a temp buffer" });
 
-vim.keymap.set('n','<leader>cml',function()
+vim.keymap.set('n', '<leader>cml', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[ocaml "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current ocaml file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current ocaml file in a temp buffer" });
 
-vim.keymap.set('n','<leader>lua',function()
+vim.keymap.set('n', '<leader>lua', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[lua "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current lua file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current lua file in a temp buffer" });
 
-vim.keymap.set('n','<leader>ruby',function()
+vim.keymap.set('n', '<leader>ruby', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[ruby "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current ruby file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current ruby file in a temp buffer" });
 
-vim.keymap.set('n','<leader>zig',function()
+vim.keymap.set('n', '<leader>zig', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[zig run "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current zig file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current zig file in a temp buffer" });
 
-vim.keymap.set('n','<leader>sft',function()
+vim.keymap.set('n', '<leader>sft', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[swift "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current swift file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current swift file in a temp buffer" });
 
-vim.keymap.set('n','<leader>nix',function()
+vim.keymap.set('n', '<leader>nix', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local run = [[nix-instantiate --eval "%:p"']]
-    vim.cmd(split_bash..run)
-end, {desc = "To run the current nix file in a temp buffer"});
+    vim.cmd(split_bash .. run)
+end, { desc = "To run the current nix file in a temp buffer" });
 
-vim.keymap.set('n','<leader>lse',function ()
+vim.keymap.set('n', '<leader>lse', function()
     vim.cmd("LspStop")
-end,{desc = "To stop the LSP"})
-vim.keymap.set('n','<leader>lsb',function ()
+end, { desc = "To stop the LSP" })
+vim.keymap.set('n', '<leader>lsb', function()
     vim.cmd("LspStart clangd")
-end,{desc = "To start the LSP"})
+end, { desc = "To start the LSP" })
 
-vim.keymap.set('n','<leader>ray',function()
+vim.keymap.set('n', '<leader>ray', function()
     local split_bash = [[vsplit | terminal bash -c ']]
     local compile = [[eval g++ $(pkg-config --libs --cflags raylib) "%:p" -o /tmp/raylib.out && ]]
     local run = [[/tmp/raylib.out']]
@@ -153,19 +155,19 @@ end
 )
 
 vim.keymap.set('n', '<leader>fmt', function()
-    vim.cmd'%!clang-format'
+    vim.cmd '%!clang-format'
 end)
 
-vim.keymap.set('n',"<leader>a'",function ()
-    vim.api.nvim_put({"``"},"c",true,true)
+vim.keymap.set('n', "<leader>a'", function()
+    vim.api.nvim_put({ "``" }, "c", true, true)
 end)
 
-vim.keymap.set('n','<leader>rn', function () vim.lsp.buf.rename() end)
-vim.keymap.set('n','d]',function ()
-    vim.diagnostic.jump({count=1})
+vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end)
+vim.keymap.set('n', 'd]', function()
+    vim.diagnostic.jump({ count = 1 })
 end)
-vim.keymap.set('n','d[',function ()
-    vim.diagnostic.jump({count=-1})
+vim.keymap.set('n', 'd[', function()
+    vim.diagnostic.jump({ count = -1 })
 end)
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -175,7 +177,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- By default, Codeium is enabled
 vim.keymap.set(
-    'n','<leader>ag',
+    'n', '<leader>ag',
     function()
         if vim.g.copilot_enabled then
             vim.cmd("Codeium Toggle")
@@ -187,49 +189,49 @@ vim.keymap.set(
             vim.g.copilot_enabled = true
         end
     end,
-    {desc="Switches between Copilot and Codeium"}
+    { desc = "Switches between Copilot and Codeium" }
 )
 
-vim.keymap.set('n','<leader>aw',function()
-    if(vim.g.copilot_enabled) then
-        print("Copilot is currently active")
-    else
-        print("Codeium is currently active")
-    end
-end,
-{desc="To see which AI assistant is currently active"})
+vim.keymap.set('n', '<leader>aw', function()
+        if (vim.g.copilot_enabled) then
+            print("Copilot is currently active")
+        else
+            print("Codeium is currently active")
+        end
+    end,
+    { desc = "To see which AI assistant is currently active" })
 
-vim.keymap.set('n','<leader>ter',function ()
+vim.keymap.set('n', '<leader>ter', function()
     local split = [[split | terminal]]
     vim.cmd(split)
 end)
 
-vim.keymap.set('n','<leader>tb', function()
-    if vim.g.tabstop == 4 then
-        vim.opt.tabstop = 8
-        vim.opt.shiftwidth = 8
-        vim.opt.softtabstop = 8
-        vim.g.tabstop = 8
-        print "Switched to 8 tab spaces"
-    else
-        vim.opt.tabstop = 4
-        vim.opt.shiftwidth = 4
-        vim.opt.softtabstop = 4
-        vim.g.tabstop = 4
-        print "Switched to 4 tab spaces"
-    end
-end,
-{desc = "To Toggle between 4 and 8 tab spaces"})
+vim.keymap.set('n', '<leader>tb', function()
+        if vim.g.tabstop == 4 then
+            vim.opt.tabstop = 8
+            vim.opt.shiftwidth = 8
+            vim.opt.softtabstop = 8
+            vim.g.tabstop = 8
+            print "Switched to 8 tab spaces"
+        else
+            vim.opt.tabstop = 4
+            vim.opt.shiftwidth = 4
+            vim.opt.softtabstop = 4
+            vim.g.tabstop = 4
+            print "Switched to 4 tab spaces"
+        end
+    end,
+    { desc = "To Toggle between 4 and 8 tab spaces" })
 
-vim.keymap.set('n','<leader>fmt', function()
+vim.keymap.set('n', '<leader>fmt', function()
     vim.lsp.buf.format()
 end)
 
-vim.keymap.set("n",'<leader>er',function ()
+vim.keymap.set("n", '<leader>er', function()
     vim.cmd "Telescope diagnostics"
 end)
 
-vim.keymap.set("v",'<leader>srt',function ()
+vim.keymap.set("v", '<leader>srt', function()
     local startRow = vim.fn.getpos("v")[2] - 1;
     local endRow = vim.fn.getpos(".")[2];
     if startRow > endRow then
@@ -240,21 +242,20 @@ vim.keymap.set("v",'<leader>srt',function ()
         startRow = endRow;
         endRow = temp;
     end
-    local lines = vim.api.nvim_buf_get_lines(0,startRow,endRow,false);
+    local lines = vim.api.nvim_buf_get_lines(0, startRow, endRow, false);
 
     table.sort(lines);
 
-    vim.api.nvim_buf_set_lines(0,startRow,endRow,false,lines);
+    vim.api.nvim_buf_set_lines(0, startRow, endRow, false, lines);
 end)
 
-vim.keymap.set('n',"<leader>mc", function()
-
-    local row =  vim.fn.getpos(".")[2];
-    vim.api.nvim_buf_set_lines(0, row-1, row, false, {"/*  */"})
+vim.keymap.set('n', "<leader>mc", function()
+    local row = vim.fn.getpos(".")[2];
+    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { "/*  */" })
 
     -- This takes to the start of the line, normal '0' or '^' wasn't working
     -- in some cases it was going to the line below the current one
-    vim.api.nvim_win_set_cursor(0,{row,0});
+    vim.api.nvim_win_set_cursor(0, { row, 0 });
 
     local indent = "V="
     local gotoStar = "f*"
@@ -262,3 +263,11 @@ vim.keymap.set('n',"<leader>mc", function()
 
     vim.api.nvim_input(indent .. gotoStar .. takeCenter)
 end)
+
+vim.keymap.set('n', '{', function()
+    vim.api.nvim_input("O<Esc>")
+end, { noremap = true, nowait = true })
+
+vim.keymap.set('n','}', function()
+    vim.api.nvim_input("o<Esc>")
+end,{noremap=true,nowait=true})
