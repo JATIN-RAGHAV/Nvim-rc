@@ -248,9 +248,17 @@ vim.keymap.set("v",'<leader>srt',function ()
 end)
 
 vim.keymap.set('n',"<leader>mc", function()
+
     local row =  vim.fn.getpos(".")[2];
     vim.api.nvim_buf_set_lines(0, row-1, row, false, {"/*  */"})
 
-    vim.api.nvim_win_set_cursor(0,{row,3});
-    vim.api.nvim_input("i");
+    -- This takes to the start of the line, normal '0' or '^' wasn't working
+    -- in some cases it was going to the line below the current one
+    vim.api.nvim_win_set_cursor(0,{row,0});
+
+    local indent = "V="
+    local gotoStar = "f*"
+    local takeCenter = "la"
+
+    vim.api.nvim_input(indent .. gotoStar .. takeCenter)
 end)
