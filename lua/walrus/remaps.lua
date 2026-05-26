@@ -41,6 +41,10 @@ vim.keymap.set('n', '<leader>lsp', function()
     yazi.yazi({},"~/.config/nvim/lua/lsps")
 end,{desc="Go to my lsps directory"})
 
+vim.keymap.set('n','<leader>sp',function()
+    vim.cmd'vsplit';
+end)
+
 vim.keymap.set('n', '<leader>e' , vim.diagnostic.open_float,{desc="Show the error in floating window"});
 vim.keymap.set('n', '<leader>ca', function ()
     vim.lsp.buf.code_action({filter = function(a) return a.isPreferred end, apply=true});
@@ -243,6 +247,10 @@ vim.keymap.set("v",'<leader>srt',function ()
     vim.api.nvim_buf_set_lines(0,startRow,endRow,false,lines);
 end)
 
--- vim.keymap.set('n','<leader>bp', require'dap'.toggle_breakpoint);
--- vim.keymap.set('n','<leader>db', vim.cmd'DapNew')
--- vim.keymap.set('n','<leader>dc', vim.cmd'DapContinue')
+vim.keymap.set('n',"<leader>mc", function()
+    local row =  vim.fn.getpos(".")[2];
+    vim.api.nvim_buf_set_lines(0, row-1, row, false, {"/*  */"})
+
+    vim.api.nvim_win_set_cursor(0,{row,3});
+    vim.api.nvim_input("i");
+end)

@@ -8,7 +8,7 @@ return {
     keys = {
         {
             "<leader>pv",
-            "<cmd>Yazi cwd<cr>",
+            "<cmd>Yazi<cr>",
             desc = "Open the file manager in nvim's working directory",
         },
         {
