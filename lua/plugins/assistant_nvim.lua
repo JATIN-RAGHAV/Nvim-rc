@@ -13,7 +13,7 @@ return {
                     extension = 'cpp',
                     template = nil,
                     compile = {
-                        main = '/run/current-system/sw/bin/g++',
+                        main = '/opt/homebrew/bin/g++-16',
                         args = { '-std=c++23', '$FILENAME_WITH_EXTENSION', '-o', '/tmp/$FILENAME_WITHOUT_EXTENSION' },
                     },
                     execute = {

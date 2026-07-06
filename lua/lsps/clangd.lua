@@ -1,3 +1,6 @@
 return {
-    cmd={"clangd",    "--query-driver=/run/current-system/sw/bin/g++",}
+    cmd={"clangd",
+        "--query-driver=/opt/homebrew/bin/g++-16",
+        "--background-index"
+    }
 }

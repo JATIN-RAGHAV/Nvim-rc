@@ -1,14 +1,14 @@
 return {
     {
         "folke/tokyonight.nvim",
-    },
-    {
-        "oskarnurm/koda.nvim",
-        config = function ()
-            vim.cmd.colorscheme 'rose-pine-main'
+        config = function()
+            vim.cmd.colorscheme 'tokyonight-night'
         end
     },
     {
-        "rose-pine/neovim"
+        "rose-pine/neovim",
+    },
+    {
+        "Shatur/neovim-ayu",
     }
 }

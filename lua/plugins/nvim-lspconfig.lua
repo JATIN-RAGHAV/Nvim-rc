@@ -25,8 +25,8 @@ return {
         vim.lsp.config('lua_ls',require'lsps.lua_ls')
         vim.lsp.config('ts_ls',require 'lsps.ts_ls')
         vim.lsp.config('ruby-lsp',require 'lsps.ruby_lsp')
-        vim.lsp.config('nixd',require 'lsps.nixd')
         vim.lsp.config('rust_analyzer', require 'lsps.rust_analyzer')
+        vim.lsp.config('clangd', require 'lsps.clangd')
 
         vim.lsp.enable('pylsp')
         vim.lsp.enable('lua_ls')
@@ -45,6 +45,7 @@ return {
         vim.lsp.enable('jdtls')
         vim.lsp.enable('graphql')
         vim.lsp.enable('prismals')
+        vim.lsp.enable('hls')
 
 
         vim.keymap.set('n', '<C-i>', vim.lsp.buf.definition, {desc='Goto definition'});
