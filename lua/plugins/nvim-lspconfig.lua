@@ -27,6 +27,7 @@ return {
         vim.lsp.config('ruby-lsp',require 'lsps.ruby_lsp')
         vim.lsp.config('rust_analyzer', require 'lsps.rust_analyzer')
         vim.lsp.config('clangd', require 'lsps.clangd')
+        vim.lsp.config('pylsp', require 'lsps.pylsp')
 
         vim.lsp.enable('pylsp')
         vim.lsp.enable('lua_ls')
